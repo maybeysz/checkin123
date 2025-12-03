@@ -25,7 +25,7 @@ if __name__ == '__main__':
         checkin = requests.post(url,headers={'cookie': cookie ,'referer': referer,'origin':origin,'user-agent':useragent,'content-type':'application/json;charset=UTF-8'},data=json.dumps(payload))
         state =  requests.get(url2,headers={'cookie': cookie ,'referer': referer,'origin':origin,'user-agent':useragent})
     #--------------------------------------------------------------------------------------------------------#  
-    #if state.status_code != 200:
+    if state.status_code != 200:
         raise Exception(f"Cookie 已失效！状态码：{state.status_code}")
     #--------------------------------------------------------------------------------------------------------#   
          
